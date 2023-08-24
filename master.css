@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Start of Design Colors */
+:root {
+    --purple: hsl(259, 100%, 65%);
+    --lightRed: hsl(0, 100%, 67%);
+    --offWhite: hsl(0, 0%, 94%);
+    --lightGrey: hsl(0, 0%, 86%);
+    --smokeyGrey: hsl(0, 1%, 44%);
+    --black: hsl(0, 0%, 8%);
+}
+/* End of Design Colors */
+
+
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #eee;
+    height: 100%;
+}
+
+
+/* Start of repetitive CSS properties */
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    display: none;
+}
+
+.invalid {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 10px;
+    margin-top: 5px;
+}
+
+.red {
+    color: var(--lightRed) !important;
+}
+
+.border-red {
+    border-color: var(--lightRed) !important;
+}
+/* End of repetitive CSS properties */
+
+
+
+.container {
+    width: 650px;
+    background-color: white;
+    border-radius: 20px;
+    border-bottom-right-radius: 30%;
+    padding: 50px;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    transform: scale(1.2);
+}
+
+
+/* Start of input section */
+.input {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.input div {
+    display: flex;
+    flex-direction: column;
+    margin-right: 25px;
+}
+
+.input span {
+    font-size: 12px;
+    margin-bottom: 5px;
+    color: var(--smokeyGrey);
+    letter-spacing: 2px;
+}
+
+.input input {
+    width: 125px;
+    padding: 5px 20px;
+    font-size: 26px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    color: var(--black);
+    border: 1px solid var(--offWhite);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid var(--purple);
+    caret-color: var(--purple);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* End of input section */
+
+
+/* Start of division section */
+.division {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.division hr {
+    border: none;
+    border-top: 2px solid hsl(0, 0%, 94%);
+    width: 90%;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    background-color: var(--purple);
+    border-radius: 50%;
+    transform: scale(0.7);
+    transition: background-color 0.2s ease-in-out;
+    position: absolute;
+    right: -5%;
+}
+
+.circle:hover {
+    background-color: var(--black);
+    cursor: pointer;
+}
+
+.circle .shape {
+    width: 2px;
+    height: 40%;
+    background-color: white;
+    position: relative;
+}
+
+.circle .shape::before {
+    content: "";
+    width: 40px;
+    height: 40px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: transparent transparent transparent white;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -57%;
+    left: 0;
+    transform: rotate(45deg);
+}
+
+.circle .shape::after {
+    content: "";
+    width: 40px;
+    height: 40px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: transparent white transparent transparent;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -57%;
+    right: 0;
+    transform: rotate(-45deg);
+}
+/* End of division section */
+
+
+/* Start of output section */
+.output {
+    font-weight: 800;
+    font-style: italic;
+    font-size: 5em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.output p {
+    margin-bottom: -30px;
+}
+
+.output span {
+    color: var(--purple);
+    margin-right: -5px;
+    letter-spacing: 10px;
+}
+/* End of output section */
+
+
+/* Start of mobile design */
+@media (max-width: 767px) {
+    .container {
+        width: 92.5%;
+        padding: 50px 25px;
+        border-bottom-right-radius: 25%;
+        transform: unset;
+    }
+
+    .input {
+        justify-content: space-between;
+    }
+
+    .input div {
+        margin-right: unset;
+        width: calc(90% /3);
+    }
+
+    .input input {
+        width: 100%;
+        font-size: 22px;
+        padding: 10px 15px;
+    }
+
+    .division {
+        justify-content: center;
+        margin-top: 70px;
+    }
+
+    .division hr {
+        width: 100%;
+    }
+
+    .division .circle {
+        right: unset;
+        transform: scale(0.65);
+    }
+
+    .output {
+        font-size: 3.4em;
+        margin-top: 55px;
+        margin-bottom: 15px;
+    }
+
+    .output p {
+        margin-bottom: -20px;
+    }
+
+    .output span {
+        letter-spacing: 0px;
+        margin-right: 10px;
+    }
+}
+/* End of mobile design */
